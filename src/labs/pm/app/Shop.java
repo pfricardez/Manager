@@ -48,10 +48,10 @@ public class Shop {
         //     return log.toString();
         // };
 
-        // pm.createProduct(101, "Tea", BigDecimal.valueOf(1.99), NOT_RATED);
+        pm.createProduct(101, "Tea", BigDecimal.valueOf(1.99), NOT_RATED);
         // pm.parseProduct("D,101,Tea,100.99,0,2019-09-19");
         // pm.printProductReport(42);  //Ejemplo que maneja una excepcion
-        // pm.reviewProduct(42, FOUR_STAR, "Nice hot cup of tea");   //Ejemplo que maneja una excepcion
+        pm.reviewProduct(42, FOUR_STAR, "Nice hot cup of tea");   //Ejemplo que maneja una excepcion
         // pm.printProductReport(101);
         // pm.parseReview("101,4,Nice hot cup of tea");
         // pm.parseReview("101,2,Rather weak tea");

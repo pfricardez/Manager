@@ -109,7 +109,7 @@ public class Shop {
 
 
 
-        // List<Callable<String>> clients = Stream.generate( () -> client).limit(5).collect(Collectors.toList());
+        List<Callable<String>> clients = Stream.generate( () -> client).limit(5).collect(Collectors.toList());
 
         // ExecutorService executorService = Executors.newFixedThreadPool(3);
 

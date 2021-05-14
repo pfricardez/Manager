@@ -26,27 +26,27 @@ public class Shop {
         
         ProductManager pm = ProductManager.getInstance();
 
-        // AtomicInteger clienteCount = new AtomicInteger(0);
+        AtomicInteger clienteCount = new AtomicInteger(0);
 
-        // Callable<String> client = () -> {
-        //     String clientId = "Client" + clienteCount.incrementAndGet();
-        //     String threadName = Thread.currentThread().getName();
-        //     int productId = ThreadLocalRandom.current().nextInt(6)+ 101;
-        //     StringBuilder log = new StringBuilder();
-        //     log.append(clientId+" " +threadName+"\n-\tstart of log\t-\n"); 
+        Callable<String> client = () -> {
+            String clientId = "Client" + clienteCount.incrementAndGet();
+            String threadName = Thread.currentThread().getName();
+            int productId = ThreadLocalRandom.current().nextInt(6)+ 101;
+            StringBuilder log = new StringBuilder();
+            log.append(clientId+" " +threadName+"\n-\tstart of log\t-\n"); 
 
-        //     log.append(pm.getDiscounts("es_MX").entrySet().stream().map(entry -> entry.getKey() + "\t" + entry.getValue())
-        //                                      .collect(Collectors.joining("\n")));
+            log.append(pm.getDiscounts("es_MX").entrySet().stream().map(entry -> entry.getKey() + "\t" + entry.getValue())
+                                             .collect(Collectors.joining("\n")));
 
-        //     Product product = pm.reviewProduct(productId, Rating.FOUR_STAR, "Yet another review");
+            Product product = pm.reviewProduct(productId, Rating.FOUR_STAR, "Yet another review");
 
-        //     log.append(product !=null ? "\nProduct " + productId + " reviewed\n" : "\nProduct " + productId + " not reviewed\n");
-        //     pm.printProductReport(productId, "es_MX", clientId);
-        //     log.append(clientId+" generated report for "+productId+" product");
-        //     log.append("\n-\tend of log\t-\n");
+            log.append(product !=null ? "\nProduct " + productId + " reviewed\n" : "\nProduct " + productId + " not reviewed\n");
+            pm.printProductReport(productId, "es_MX", clientId);
+            log.append(clientId+" generated report for "+productId+" product");
+            log.append("\n-\tend of log\t-\n");
 
-        //     return log.toString();
-        // };
+            return log.toString();
+        };
 
         pm.createProduct(101, "Tea", BigDecimal.valueOf(1.99), NOT_RATED);
         //  pm.parseProduct("D,101,Tea,100.99,0,2019-09-19");

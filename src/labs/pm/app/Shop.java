@@ -89,7 +89,7 @@ public class Shop {
         pm.reviewProduct(106, THREE_STAR, "Better than cookie");
         pm.reviewProduct(106, TWO_STAR, "Too bitter");
         pm.reviewProduct(106, ONE_STAR, "I don't get it!");
-        // pm.printProductReport(106);
+        pm.printProductReport(106);
 
         // pm.printProducts( p->p.getPrice().floatValue() < 2,
         //              (p1, p2) -> p2.getRating().ordinal() - p1.getRating().ordinal());

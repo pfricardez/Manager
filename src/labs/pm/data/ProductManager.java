@@ -224,7 +224,7 @@ public class ProductManager {
         }
     }
 
-    public void printProductReport(Product product, String languageTag, boolean mal) {
+    public void printProductReport(Product product, String languageTag) {
         ResourceFormatter formatter = formatters.getOrDefault(languageTag, formatters.get("en-GB"));
         List<Review> reviews = products.get(product);
         StringBuilder txt = new StringBuilder();
@@ -241,6 +241,17 @@ public class ProductManager {
         }
 
         System.out.println(txt);
+    }
+
+    public void printProductReport(int id) {
+
+        try {
+        printProductReport(findProduct(id), "en-GB");
+        }
+        catch(Exception ex) {
+
+        }
+
     }
 
     private void printProductReport(Product product, String languageTag, String client) throws IOException {

@@ -1,0 +1,9 @@
+./src/labs/pm/data/Rating.java
+./src/labs/pm/data/Rateable.java
+./src/labs/pm/data/Product.java
+./src/labs/pm/data/Food.java
+./src/labs/pm/data/Drink.java
+./src/labs/pm/data/Review.java
+./src/labs/pm/data/ProductManagerException.java
+./src/labs/pm/data/ProductManager.java
+./src/labs/pm/app/Shop.java
